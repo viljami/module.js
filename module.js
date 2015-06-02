@@ -28,23 +28,14 @@
       moduleLoaded = true;
     }
 
-    if (! loaded){
-      queue[moduleName] = {
-        deps: dependencies,
-        fn: fn,
-        result: result,
-        loaded: moduleLoaded
-      };
-      return;
-    }
-
     queue[moduleName] = {
       fn: fn,
       deps: dependencies,
       result: result,
       loaded: moduleLoaded
     };
-    if (! moduleLoaded) loader(moduleName, dependencies, fn)
+
+    if (loaded && ! moduleLoaded) return loader(moduleName, dependencies, fn)
   };
 
   function loader (name, dependencies, fn){
