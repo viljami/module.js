@@ -9,8 +9,10 @@ Manages your modules, gets dependencies right and initialises after page load.
 
 ## Usage
 
-   module('app', ['customInput'], function(customInput){ ... });
-   module('customInput', function(){ ... });
+You can include your modules in any order before page finishes loading.
+
+    module('app', ['customInput'], function(customInput){ ... });
+    module('customInput', function(){ ... });
 
 # Copyright
 
