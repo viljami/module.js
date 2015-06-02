@@ -1,6 +1,6 @@
 # Modules made simple
 
-Manage your modules and get dependencies right.
+Manages your modules, gets dependencies right and initialises after page load.
 
 ## Benefits
 
