@@ -1,0 +1,26 @@
+{
+  "name": "module.js",
+  "main": "module.js",
+  "version": "0.0.2",
+  "homepage": "https://github.com/viljami/module.js",
+  "authors": [
+    "Viljami Peltola <viljami.peltola@iki.fi>"
+  ],
+  "description": "Simple module loader",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "Module",
+    "loader",
+    "vanilla.js"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
