@@ -1,5 +1,3 @@
-/* globals window */
-
 'use strict';
 
 ;window.module = (function(window, undefined){
