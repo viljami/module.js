@@ -1,0 +1,29 @@
+<!Doctype html>
+<html>
+<head>
+<script src="../module.js"></script>
+</head>
+<body>
+<p>Please, open console to view result.</p>
+<script>
+module('A', ['B'], function(B){ 
+  console.log('init A - dependency B:', B); 
+  return {a: 1}; 
+});
+
+module('app', ['A', 'C'],  function(A, B){
+  console.log('init app - dependencies A:', A, ' and B: ', B);
+});
+
+module('C', ['B'], function(B){
+  console.log('init C - dependency B:', B);
+  return {c: 3};
+});
+
+module('B', function(){ 
+  console.log('init B - no dependencies');
+  return {b: 2};
+});
+</script>
+</body>
+</html>
