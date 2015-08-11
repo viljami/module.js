@@ -1,6 +1,6 @@
-'use strict';
+;(function(global, undefined){
+  'use strict';
 
-;window.module = (function(window, undefined){
   var queue = {};
   var isWindowLoaded = false;
 
@@ -17,7 +17,7 @@
   };
 
   // Init modules.
-  window.addEventListener('load', function (){
+  global.addEventListener('load', function (){
     setTimeout(function (){ // defer ensures all module calls have happened
       isWindowLoaded = true;
       Object.keys(queue).forEach(function(name){
@@ -26,7 +26,7 @@
     }, 10);
   });
 
-  return function (moduleName, dependencies, fn){
+  global.module = function module (moduleName, dependencies, fn){
     var result;
     if (arguments.length === 1) return queue[moduleName].result;
     if (! fn){
@@ -45,4 +45,4 @@
     // Load module and return it initialised if module called after page load.
     if (isWindowLoaded && ! result) return loader(moduleName, dependencies, fn);
   };
-})(window);
+})(this);
